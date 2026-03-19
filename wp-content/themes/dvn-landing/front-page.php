@@ -763,67 +763,51 @@ window.DVN_PROMO = {
     <p class="sec-body">Tips perawatan kulit, wawasan nutrisi, dan panduan gaya hidup sehat — semua ditulis untuk mendukung rutinitas harian Anda.</p>
 
     <div class="blog-grid">
-
-      <!-- Artikel 1 -->
+      <?php
+      $args = array('post_type' => 'post', 'posts_per_page' => 3);
+      $recent_posts = new WP_Query($args);
+      $idx = 1;
+      if ($recent_posts->have_posts()) :
+          while ($recent_posts->have_posts()) : $recent_posts->the_post();
+              $cat = get_the_category();
+              $cat_name = !empty($cat) ? $cat[0]->name : 'Artikel';
+              $thumbnail_url = get_the_post_thumbnail_url() ? get_the_post_thumbnail_url() : get_template_directory_uri().'/assets/dvn-banner-masalah.jpg';
+              // Fallbacks based on index just to match aesthetic roughly
+              if (!$thumbnail_url || strpos($thumbnail_url, 'dvn-banner-masalah') !== false) {
+                  if($idx == 2) $thumbnail_url = get_template_directory_uri().'/assets/dvn-banner-bahan.jpg';
+                  if($idx == 3) $thumbnail_url = get_template_directory_uri().'/assets/dvn-banner-manfaat.jpg';
+              }
+              $title = get_the_title();
+              $excerpt = wp_trim_words(get_the_excerpt(), 15);
+              $date = get_the_date('j M Y');
+              $link = get_the_permalink();
+      ?>
       <div class="blog-card reveal">
-        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/dvn-banner-masalah.jpg" alt="Tanda kulit butuh kolagen" width="200" height="120" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" draggable="false" oncontextmenu="return false;">
+        <img src="<?php echo esc_url($thumbnail_url); ?>" alt="<?php echo esc_attr($title); ?>" width="200" height="120" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" draggable="false" oncontextmenu="return false;">
         <div class="blog-body">
-          <span class="blog-cat">Perawatan Kulit</span>
-          <div class="blog-title">5 Tanda Kulit Anda Mulai Membutuhkan Perhatian Ekstra</div>
-          <div class="blog-excerpt">Kulit kusam, tekstur tidak merata, dan kekenyalan yang berkurang bisa menjadi sinyal bahwa kulit memerlukan perhatian lebih dalam rutinitas harian.</div>
+          <span class="blog-cat"><?php echo esc_html($cat_name); ?></span>
+          <div class="blog-title"><?php echo esc_html($title); ?></div>
+          <div class="blog-excerpt"><?php echo esc_html($excerpt); ?></div>
           <div class="blog-meta">
             <div class="blog-meta-left">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-              12 Jun 2025
+              <?php echo esc_html($date); ?>
             </div>
-            <a href="/dvn-artikel-1.html" class="blog-readmore" onclick="trackCTA(&#39;blog_read_1&#39;)">
+            <a href="<?php echo esc_url($link); ?>" class="blog-readmore" onclick="trackCTA('blog_read_<?php echo $idx; ?>')">
               Baca selengkapnya
               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </a>
           </div>
         </div>
       </div>
-
-      <!-- Artikel 2 -->
-      <div class="blog-card reveal">
-        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/dvn-banner-bahan.jpg" alt="Mengenal kolagen" width="200" height="120" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" draggable="false" oncontextmenu="return false;">
-        <div class="blog-body">
-          <span class="blog-cat">Nutrisi &amp; Kesehatan</span>
-          <div class="blog-title">Mengenal Kolagen: Protein Penting dalam Tubuh dan Suplemen Sehari-hari</div>
-          <div class="blog-excerpt">Kolagen adalah protein yang secara alami ada di dalam tubuh. Pelajari apa itu kolagen, di mana ditemukan, dan bagaimana suplemen kolagen digunakan dalam gaya hidup sehat.</div>
-          <div class="blog-meta">
-            <div class="blog-meta-left">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-              28 Mei 2025
-            </div>
-            <a href="/dvn-artikel-2.html" class="blog-readmore" onclick="trackCTA(&#39;blog_read_2&#39;)">
-              Baca selengkapnya
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Artikel 3 -->
-      <div class="blog-card reveal">
-        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/dvn-banner-manfaat.jpg" alt="Rutinitas perawatan kulit" width="200" height="120" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;" draggable="false" oncontextmenu="return false;">
-        <div class="blog-body">
-          <span class="blog-cat">Gaya Hidup</span>
-          <div class="blog-title">Rutinitas Sederhana Menjaga Kulit Sehat di Tengah Kesibukan</div>
-          <div class="blog-excerpt">Antara pekerjaan, keluarga, dan aktivitas sosial — begini cara membangun rutinitas perawatan diri yang konsisten tanpa menghabiskan banyak waktu.</div>
-          <div class="blog-meta">
-            <div class="blog-meta-left">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-              5 Mei 2025
-            </div>
-            <a href="/dvn-artikel-3.html" class="blog-readmore" onclick="trackCTA(&#39;blog_read_3&#39;)">
-              Baca selengkapnya
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-
+      <?php
+          $idx++;
+          endwhile;
+          wp_reset_postdata();
+      else :
+      ?>
+      <p style="text-align:center;padding:40px;color:var(--txt3);font-weight:600;">Belum ada artikel yang diterbitkan.</p>
+      <?php endif; ?>
     </div><!-- end blog-grid -->
 
     <div style="text-align:center;">

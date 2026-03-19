@@ -18,30 +18,30 @@
  * @package WordPress
  */
 // ```php
-define( 'WP_DEBUG', true );
-define( 'WP_DEBUG_DISPLAY', true );
-define( 'WP_DEBUG_LOG', true );
-@ini_set( 'display_errors', 1 );
+define('WP_DEBUG', true);
+define('WP_DEBUG_DISPLAY', true);
+define('WP_DEBUG_LOG', true);
+@ini_set('display_errors', 1);
 // ```
 
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'wp_dvncollagenlocal_db' );
+define('DB_NAME', 'dvn');
 
 /** Database username */
-define( 'DB_USER', 'wp_dvncollagenlocal_user' );
+define('DB_USER', 'root');
 
 /** Database password */
-define( 'DB_PASSWORD', 'wp_dvncollagenlocal_pw' );
+define('DB_PASSWORD', '');
 
 /** Database hostname */
-define( 'DB_HOST', 'localhost:3306' );
+define('DB_HOST', 'localhost:3306');
 
 /** Database charset to use in creating database tables. */
-define( 'DB_CHARSET', 'utf8mb4' );
+define('DB_CHARSET', 'utf8mb4');
 
 /** The database collate type. Don't change this if in doubt. */
-define( 'DB_COLLATE', '' );
+define('DB_COLLATE', '');
 
 /**#@+
  * Authentication unique keys and salts.
@@ -90,16 +90,16 @@ $table_prefix = 'wp_';
 /* Add any custom values between this line and the "stop editing" line. */
 
 /* Force correct site URL — change this when deploying to production */
-define( 'WP_HOME',    'http://dvn-collagen.local' );
-define( 'WP_SITEURL', 'http://dvn-collagen.local' );
+define('WP_HOME', 'http://dvn-collagen.local');
+define('WP_SITEURL', 'http://dvn-collagen.local');
 
 
 
 /* That's all, stop editing! Happy publishing. */
 
 /** Absolute path to the WordPress directory. */
-if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', __DIR__ . '/' );
+if (!defined('ABSPATH')) {
+	define('ABSPATH', __DIR__ . '/');
 }
 
 /** Sets up WordPress vars and included files. */

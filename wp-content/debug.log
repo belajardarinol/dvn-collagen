@@ -19899,3 +19899,19 @@ Stack trace:
 [17-Mar-2026 23:21:54 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9000 (through xdebug.client_host/xdebug.client_port) :-(
 [17-Mar-2026 23:22:34 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9000 (through xdebug.client_host/xdebug.client_port) :-(
 [17-Mar-2026 23:22:34 UTC] Xdebug: [Step Debug] Could not connect to debugging client. Tried: localhost:9000 (through xdebug.client_host/xdebug.client_port) :-(
+[19-Mar-2026 16:04:56 UTC] Automatic updates starting...
+[19-Mar-2026 16:04:57 UTC]   Automatic plugin updates starting...
+[19-Mar-2026 16:04:57 UTC]   Automatic plugin updates complete.
+[19-Mar-2026 16:04:58 UTC]   Automatic theme updates starting...
+[19-Mar-2026 16:04:59 UTC]   Automatic theme updates complete.
+[19-Mar-2026 16:04:59 UTC] Automatic updates complete.
+[19-Mar-2026 16:10:42 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function wp_create_category() in C:\laragon\www\dvn-collagen\insert-dummy.php:45
+Stack trace:
+#0 {main}
+  thrown in C:\laragon\www\dvn-collagen\insert-dummy.php on line 45
+[19-Mar-2026 16:11:03 UTC] PHP Deprecated:  Function get_page_by_title is <strong>deprecated</strong> since version 6.2.0! Use WP_Query instead. in C:\laragon\www\dvn-collagen\wp-includes\functions.php on line 6131
+[19-Mar-2026 16:11:03 UTC] PHP Deprecated:  Function get_page_by_title is <strong>deprecated</strong> since version 6.2.0! Use WP_Query instead. in C:\laragon\www\dvn-collagen\wp-includes\functions.php on line 6131
+[19-Mar-2026 16:11:03 UTC] PHP Deprecated:  Function get_page_by_title is <strong>deprecated</strong> since version 6.2.0! Use WP_Query instead. in C:\laragon\www\dvn-collagen\wp-includes\functions.php on line 6131
+[19-Mar-2026 16:11:03 UTC] PHP Deprecated:  Function get_page_by_title is <strong>deprecated</strong> since version 6.2.0! Use WP_Query instead. in C:\laragon\www\dvn-collagen\wp-includes\functions.php on line 6131
+[19-Mar-2026 16:11:03 UTC] PHP Deprecated:  Function get_page_by_title is <strong>deprecated</strong> since version 6.2.0! Use WP_Query instead. in C:\laragon\www\dvn-collagen\wp-includes\functions.php on line 6131
+[19-Mar-2026 16:11:03 UTC] PHP Deprecated:  Function get_page_by_title is <strong>deprecated</strong> since version 6.2.0! Use WP_Query instead. in C:\laragon\www\dvn-collagen\wp-includes\functions.php on line 6131
