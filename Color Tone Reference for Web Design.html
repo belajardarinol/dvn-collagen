@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DVN Dengan Collagen – Kulit Cantik dari Dalam</title>
+<!-- Google Tag Manager placeholder -->
+<script>/* GTM snippet placeholder */</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rose-50: #fff0f4;
+    --rose-100: #ffe1ea;
+    --rose-200: #ffc2d4;
+    --rose-300: #ff94b3;
+    --rose-400: #ff5c8d;
+    --rose-500: #f72d6b;
+    --rose-600: #e01055;
+    --rose-700: #bc0847;
+    --pink-soft: #fde8ef;
+    --pink-mid: #f9c6d8;
+    --pink-deep: #e8769f;
+    --blush: #fdf2f6;
+    --cream: #fff8fb;
+    --text-dark: #2d1a22;
+    --text-mid: #6b3850;
+    --text-light: #9b6070;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    overflow-x: hidden;
+    background: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+  /* ---- Petal particles ---- */
+  .petals-bg {
+    position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0;
+  }
+  .petal {
+    position: absolute;
+    width: 18px; height: 22px;
+    background: radial-gradient(ellipse at 40% 30%, #ffb3cc 60%, #f97aaa 100%);
+    border-radius: 60% 40% 60% 40% / 60% 50% 50% 40%;
+    opacity: 0;
+    animation: petalFall linear infinite;
+  }
+  @keyframes petalFall {
+    0%   { transform: translateY(-60px) rotate(0deg) scale(0.8); opacity: 0; }
+    10%  { opacity: 0.7; }
+    80%  { opacity: 0.5; }
+    100% { transform: translateY(110vh) rotate(360deg) translateX(80px) scale(1.1); opacity: 0; }
+  }
+
+  /* ---- Animations ---- */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; } to { opacity: 1; }
+  }
+  @keyframes shimmer {
+    0%,100% { background-position: -200% center; }
+    50%      { background-position: 200% center; }
+  }
+  @keyframes pulse-ring {
+    0%   { box-shadow: 0 0 0 0 rgba(247,45,107,.4); }
+    70%  { box-shadow: 0 0 0 14px rgba(247,45,107,0); }
+    100% { box-shadow: 0 0 0 0 rgba(247,45,107,0); }
+  }
+  @keyframes float {
+    0%,100% { transform: translateY(0); }
+    50%     { transform: translateY(-8px); }
+  }
+  @keyframes heartbeat {
+    0%,100% { transform: scale(1); }
+    15%     { transform: scale(1.15); }
+    30%     { transform: scale(1); }
+    45%     { transform: scale(1.08); }
+  }
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); } to { transform: rotate(360deg); }
+  }
+  @keyframes countdown-pop {
+    0%,100% { transform: scale(1); }
+    50%     { transform: scale(1.06); }
+  }
+  .anim-fade-up { animation: fadeUp .7s ease both; }
+  .delay-1 { animation-delay: .1s; }
+  .delay-2 { animation-delay: .2s; }
+  .delay-3 { animation-delay: .3s; }
+  .delay-4 { animation-delay: .4s; }
+  .delay-5 { animation-delay: .5s; }
+
+  /* ---- Scroll reveal ---- */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* ---- Section base ---- */
+  .section { width: 100%; position: relative; }
+
+  /* ===== HERO ===== */
+  @keyframes floatA { 0%,100%{transform:translateY(0) rotate(-4deg)} 50%{transform:translateY(-10px) rotate(-4deg)} }
+  @keyframes floatB { 0%,100%{transform:translateY(0) rotate(5deg)} 50%{transform:translateY(-8px) rotate(5deg)} }
+  @keyframes floatProd { 0%,100%{transform:translateY(0) rotate(8deg)} 50%{transform:translateY(-12px) rotate(8deg)} }
+  @keyframes glowPulse { 0%,100%{opacity:.5;transform:scale(1)} 50%{opacity:.8;transform:scale(1.08)} }
+  @keyframes sparkle { 0%,100%{opacity:0;transform:scale(0) rotate(0deg)} 50%{opacity:1;transform:scale(1) rotate(180deg)} }
+
+  .hero {
+    width: 100%; min-height: 100vh; position: relative; overflow: hidden;
+    background: linear-gradient(170deg, #fff5f8 0%, #fde4ed 30%, #fcc9da 60%, #f9b0c6 85%, #f498b8 100%);
+    display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
+    padding: 56px 0 60px;
+  }
+  /* Background orbs */
+  .hero-orb {
+    position: absolute; border-radius: 50%; pointer-events: none;
+  }
+  .hero-orb-1 {
+    width: 280px; height: 280px; top: -80px; right: -80px;
+    background: radial-gradient(circle, rgba(255,180,210,.55) 0%, transparent 70%);
+    animation: glowPulse 5s ease infinite;
+  }
+  .hero-orb-2 {
+    width: 200px; height: 200px; bottom: 60px; left: -60px;
+    background: radial-gradient(circle, rgba(255,200,220,.45) 0%, transparent 70%);
+    animation: glowPulse 7s ease infinite 1s;
+  }
+  .hero-orb-3 {
+    width: 140px; height: 140px; top: 50%; right: -30px;
+    background: radial-gradient(circle, rgba(252,180,200,.4) 0%, transparent 70%);
+    animation: glowPulse 6s ease infinite 2s;
+  }
+  /* Decorative flowers SVG blobs */
+  .hero-flower {
+    position: absolute; pointer-events: none; opacity: .75;
+  }
+  .hero-logo {
+    font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 900;
+    letter-spacing: .14em; color: var(--rose-600);
+    animation: fadeIn .8s ease both;
+    text-shadow: 0 2px 16px rgba(224,16,85,.2);
+    margin-bottom: 6px; position: relative; z-index: 5;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: white; border: 1.5px solid var(--rose-300); border-radius: 99px;
+    padding: 5px 14px; font-size: .75rem; font-weight: 600; color: var(--rose-600);
+    margin-bottom: 18px; animation: fadeIn 1s ease both .2s;
+    box-shadow: 0 4px 14px rgba(224,16,85,.12);
+    position: relative; z-index: 5;
+  }
+
+  /* === VISUAL CLUSTER === */
+  .hero-visual {
+    position: relative; width: 100%; max-width: 400px;
+    height: 340px; margin: 0 auto 24px;
+    z-index: 4;
+  }
+  /* Polaroid cards */
+  .polaroid {
+    position: absolute;
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 12px 36px rgba(180,40,80,.18), 0 2px 8px rgba(0,0,0,.08);
+    overflow: visible;
+    padding: 6px 6px 22px 6px;
+  }
+  .polaroid img {
+    display: block; border-radius: 4px;
+    object-fit: cover;
+  }
+  .polaroid-name {
+    text-align: center; font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: .72rem; color: var(--rose-500); margin-top: 4px; padding: 0 4px;
+  }
+  .polaroid-a {
+    width: 148px;
+    top: 10px; left: 14px;
+    transform: rotate(-5deg);
+    animation: floatA 5s ease-in-out infinite;
+    z-index: 3;
+  }
+  .polaroid-a img { width: 136px; height: 160px; }
+  .polaroid-b {
+    width: 136px;
+    top: 80px; right: 10px;
+    transform: rotate(4deg);
+    animation: floatB 6s ease-in-out infinite .8s;
+    z-index: 4;
+  }
+  .polaroid-b img { width: 124px; height: 150px; }
+  /* Product jar floating */
+  .hero-product {
+    position: absolute;
+    bottom: 10px; right: 50%;
+    transform: translateX(80px) rotate(8deg);
+    animation: floatProd 4.5s ease-in-out infinite 0.3s;
+    z-index: 5;
+  }
+  .hero-product-inner {
+    width: 90px; height: 90px;
+    background: linear-gradient(135deg, #fde8ef 0%, #fcc9da 100%);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 10px 30px rgba(224,16,85,.22);
+    border: 3px solid white;
+    font-size: 2rem;
+  }
+  /* Superbrands badge */
+  .hero-cert {
+    position: absolute; top: 8px; right: 12px;
+    background: linear-gradient(135deg,#ffd700,#ffb800); color: #6b3800;
+    border-radius: 50%; width: 64px; height: 64px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-size: .48rem; font-weight: 800; text-align: center; line-height: 1.25;
+    box-shadow: 0 4px 16px rgba(255,184,0,.45);
+    animation: spin-slow 14s linear infinite;
+    z-index: 6;
+  }
+  /* Floating info cards on visual */
+  .hero-info-chip {
+    position: absolute;
+    background: white; border-radius: 50px;
+    padding: 6px 12px; font-size: .7rem; font-weight: 700;
+    box-shadow: 0 6px 18px rgba(224,16,85,.14);
+    display: flex; align-items: center; gap: 6px;
+    z-index: 6; white-space: nowrap;
+  }
+  .chip-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .hero-chip-1 { top: 0px; right: 0px; color: var(--rose-600); animation: floatB 4s ease-in-out infinite; }
+  .hero-chip-2 { bottom: 30px; left: 0px; color: #155724; animation: floatA 5s ease-in-out infinite 1s; }
+  /* Sparkle decorations */
+  .sparkle-el {
+    position: absolute; pointer-events: none;
+    color: var(--rose-400); font-size: 1.1rem; z-index: 7;
+    animation: sparkle 2.5s ease-in-out infinite;
+  }
+
+  .hero-headline {
+    font-family: 'Playfair Display', serif; font-size: clamp(1.85rem, 7vw, 3rem);
+    font-weight: 900; text-align: center; line-height: 1.2; color: var(--rose-700);
+    margin-bottom: 10px; position: relative; z-index: 5;
+    padding: 0 20px;
+  }
+  .hero-headline span { color: var(--rose-500); font-style: italic; }
+  .hero-sub {
+    text-align: center; font-size: 1rem; color: var(--text-mid); max-width: 320px;
+    margin: 0 auto 24px; font-weight: 400; position: relative; z-index: 5;
+    padding: 0 20px;
+  }
+  /* Trust row */
+  .hero-trust-row {
+    display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+    margin-bottom: 22px; position: relative; z-index: 5;
+    padding: 0 20px;
+  }
+  .hero-trust-chip {
+    display: flex; align-items: center; gap: 5px;
+    background: rgba(255,255,255,.7); backdrop-filter: blur(6px);
+    border: 1px solid rgba(224,16,85,.2); border-radius: 99px;
+    padding: 4px 12px; font-size: .72rem; font-weight: 600; color: var(--text-mid);
+  }
+  .hero-img-wrap { display: none; }
+  .hero-badge-float { display: none; }
+
+  /* ===== CTA BUTTON ===== */
+  .btn-main {
+    display: block; width: 100%; max-width: 340px; margin: 0 auto;
+    background: linear-gradient(135deg, var(--rose-500) 0%, var(--rose-600) 100%);
+    color: white !important; text-decoration: none !important;
+    text-align: center; font-size: 1.05rem; font-weight: 700;
+    padding: 16px 24px; border-radius: 99px; border: none; cursor: pointer;
+    box-shadow: 0 8px 28px rgba(224,16,85,.35);
+    animation: pulse-ring 2s ease infinite;
+    transition: transform .2s ease, box-shadow .2s ease;
+    letter-spacing: .03em;
+  }
+  .btn-main:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(224,16,85,.45); }
+  .btn-micro { text-align: center; font-size: .72rem; color: var(--text-light); margin-top: 8px; }
+
+  /* ===== SECTION TITLES ===== */
+  .sec-tag {
+    display: inline-block; background: linear-gradient(135deg,#fde4ed,#fcc9da);
+    color: var(--rose-600); font-size: .72rem; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; padding: 4px 14px; border-radius: 99px; margin-bottom: 10px;
+  }
+  .sec-title {
+    font-family: 'Playfair Display', serif; font-size: clamp(1.5rem,6vw,2.4rem);
+    font-weight: 900; line-height: 1.2; color: var(--text-dark); margin-bottom: 12px;
+  }
+  .sec-title span { color: var(--rose-500); font-style: italic; }
+  .sec-body { font-size: .95rem; color: var(--text-mid); line-height: 1.7; }
+
+  /* ===== PROBLEM SECTION ===== */
+  .problem-sec {
+    background: linear-gradient(180deg, #fde8ef 0%, #fff0f5 100%);
+    padding: 60px 20px 50px; text-align: center;
+  }
+  .problem-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 28px; }
+  .problem-card {
+    background: white; border-radius: 20px; padding: 18px 20px;
+    display: flex; align-items: center; gap: 14px;
+    box-shadow: 0 4px 20px rgba(224,16,85,.08);
+    border-left: 4px solid var(--rose-400);
+    text-align: left;
+  }
+  .problem-icon { flex-shrink: 0; width: 44px; height: 44px; background: var(--pink-soft); border-radius: 12px; display: flex; align-items: center; justify-content: center; }
+  .problem-card h4 { font-size: .95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 3px; }
+  .problem-card p { font-size: .82rem; color: var(--text-light); }
+
+  /* ===== AGITATE ===== */
+  .agitate-sec {
+    background: linear-gradient(135deg, #fcc9da 0%, #fde8ef 60%, #fff4f7 100%);
+    padding: 50px 20px; text-align: center;
+  }
+  .agitate-quote {
+    background: white; border-radius: 20px; padding: 24px 22px; margin: 24px 0;
+    font-family: 'Playfair Display', serif; font-size: 1.15rem; font-style: italic;
+    color: var(--rose-700); position: relative;
+    box-shadow: 0 8px 30px rgba(224,16,85,.1);
+    line-height: 1.6;
+  }
+  .agitate-quote::before {
+    content: '"'; font-size: 5rem; color: var(--rose-200); position: absolute;
+    top: -20px; left: 16px; line-height: 1; font-family: 'Playfair Display', serif;
+  }
+
+  /* ===== SOLUTION ===== */
+  .solution-sec {
+    background: linear-gradient(180deg, #fff0f5 0%, #fde8ef 100%);
+    padding: 60px 20px 50px; text-align: center;
+  }
+  .benefit-list { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; text-align: left; }
+  .benefit-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: white; border-radius: 18px; padding: 16px 18px;
+    box-shadow: 0 4px 16px rgba(224,16,85,.07);
+  }
+  .benefit-num {
+    flex-shrink: 0; width: 36px; height: 36px; background: linear-gradient(135deg,var(--rose-500),var(--rose-600));
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    color: white; font-size: .85rem; font-weight: 800;
+  }
+  .benefit-item h4 { font-size: .95rem; font-weight: 700; margin-bottom: 3px; }
+  .benefit-item p { font-size: .82rem; color: var(--text-light); }
+
+  /* ===== INGREDIENTS ===== */
+  .ingr-sec {
+    background: linear-gradient(160deg, #fde8ef 0%, #fcc9da 50%, #fde8ef 100%);
+    padding: 60px 20px 50px; text-align: center;
+  }
+  .cert-row {
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+    margin: 20px 0 28px; flex-wrap: wrap;
+  }
+  .cert-badge {
+    background: white; border-radius: 14px; padding: 10px 16px;
+    display: flex; align-items: center; gap: 8px; font-size: .82rem; font-weight: 700;
+    color: var(--text-dark); box-shadow: 0 4px 14px rgba(224,16,85,.1);
+  }
+  .ingr-grid { display: flex; flex-direction: column; gap: 14px; }
+  .ingr-card {
+    background: white; border-radius: 20px; padding: 18px 20px; text-align: left;
+    box-shadow: 0 6px 24px rgba(224,16,85,.09);
+    border-top: 3px solid var(--rose-300);
+  }
+  .ingr-card h4 { font-size: 1rem; font-weight: 700; color: var(--rose-700); margin-bottom: 6px; }
+  .ingr-card p { font-size: .82rem; color: var(--text-mid); }
+
+  /* ===== COMPARISON ===== */
+  .compare-sec {
+    background: linear-gradient(180deg, #fff4f7 0%, #fde8ef 100%);
+    padding: 60px 20px 50px; text-align: center;
+  }
+  .compare-table {
+    width: 100%; border-collapse: collapse; margin-top: 24px;
+    border-radius: 20px; overflow: hidden; box-shadow: 0 8px 28px rgba(224,16,85,.1);
+  }
+  .compare-table th {
+    padding: 14px 10px; font-size: .82rem; font-weight: 700;
+  }
+  .compare-table th:nth-child(1) { background: #f5f5f5; color: #666; width: 44%; }
+  .compare-table th:nth-child(2) { background: #ffe0eb; color: var(--rose-700); width: 28%; }
+  .compare-table th:nth-child(3) { background: linear-gradient(135deg,var(--rose-500),var(--rose-600)); color: white; width: 28%; }
+  .compare-table td {
+    padding: 13px 10px; font-size: .82rem; border-bottom: 1px solid #fde8ef; vertical-align: middle;
+  }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table td:nth-child(1) { background: #fafafa; color: var(--text-dark); font-weight: 500; text-align: left; padding-left: 16px; }
+  .compare-table td:nth-child(2) { background: #fff5f8; text-align: center; color: #aaa; }
+  .compare-table td:nth-child(3) { background: #fff0f4; text-align: center; color: var(--rose-600); font-weight: 700; }
+
+  /* ===== TESTIMONIALS ===== */
+  .testi-sec {
+    background: linear-gradient(160deg, #fde8ef 0%, #fff0f5 100%);
+    padding: 60px 20px 50px; text-align: center;
+  }
+  .testi-scroll { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+  .testi-card {
+    background: white; border-radius: 20px; padding: 20px 18px;
+    box-shadow: 0 6px 24px rgba(224,16,85,.08); text-align: left; position: relative;
+  }
+  .testi-card::before {
+    content: '★★★★★'; color: #ffc107; font-size: .9rem; display: block; margin-bottom: 10px;
+  }
+  .testi-quote { font-size: .9rem; color: var(--text-dark); line-height: 1.6; margin-bottom: 12px; font-style: italic; }
+  .testi-author { display: flex; align-items: center; gap: 10px; }
+  .testi-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: linear-gradient(135deg,var(--pink-mid),var(--rose-300)); overflow: hidden;
+    display: flex; align-items: center; justify-content: center; color: white; font-weight: 800; font-size: 1rem;
+  }
+  .testi-name { font-size: .85rem; font-weight: 700; color: var(--text-dark); }
+  .testi-role { font-size: .75rem; color: var(--text-light); }
+
+  /* ===== TIMELINE ===== */
+  .timeline-sec {
+    background: linear-gradient(180deg, #fcc9da 0%, #fde8ef 100%);
+    padding: 60px 20px 50px; text-align: center;
+  }
+  .timeline { position: relative; margin-top: 28px; }
+  .timeline::before {
+    content: ''; position: absolute; left: 20px; top: 0; bottom: 0;
+    width: 2px; background: linear-gradient(180deg, var(--rose-400), var(--rose-200));
+  }
+  .tl-item {
+    display: flex; gap: 20px; margin-bottom: 24px; align-items: flex-start; position: relative;
+  }
+  .tl-dot {
+    flex-shrink: 0; width: 42px; height: 42px; background: linear-gradient(135deg,var(--rose-500),var(--rose-600));
+    border-radius: 50%; border: 3px solid white;
+    box-shadow: 0 4px 14px rgba(224,16,85,.3);
+    display: flex; align-items: center; justify-content: center; color: white; font-size: .75rem; font-weight: 800;
+    z-index: 1;
+  }
+  .tl-content { background: white; border-radius: 16px; padding: 14px 16px; flex: 1; text-align: left; box-shadow: 0 4px 16px rgba(224,16,85,.07); }
+  .tl-content h4 { font-size: .9rem; font-weight: 700; color: var(--rose-700); margin-bottom: 4px; }
+  .tl-content p { font-size: .8rem; color: var(--text-mid); }
+
+  /* ===== FAQ ===== */
+  .faq-sec {
+    background: linear-gradient(180deg, #fff0f5 0%, #fde8ef 100%);
+    padding: 60px 20px 50px; text-align: center;
+  }
+  .faq-item {
+    background: white; border-radius: 18px; margin-bottom: 12px;
+    box-shadow: 0 4px 16px rgba(224,16,85,.07);
+    overflow: hidden;
+  }
+  .faq-q {
+    width: 100%; background: none; border: none; padding: 18px 18px 18px 20px;
+    text-align: left; cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+    font-size: .92rem; font-weight: 700; color: var(--text-dark); gap: 10px;
+  }
+  .faq-q svg { flex-shrink: 0; transition: transform .3s ease; color: var(--rose-500); }
+  .faq-q.open svg { transform: rotate(180deg); }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+  .faq-a.open { max-height: 300px; }
+  .faq-a-inner { padding: 0 18px 18px; font-size: .85rem; color: var(--text-mid); line-height: 1.7; }
+
+  /* ===== GUARANTEE ===== */
+  .guarantee-sec {
+    background: linear-gradient(135deg, #fff0f5 0%, #fde8ef 100%);
+    padding: 60px 20px 50px; text-align: center;
+  }
+  .guarantee-box {
+    background: linear-gradient(135deg, white 0%, #fff8fb 100%);
+    border-radius: 24px; padding: 28px 22px;
+    border: 2px solid var(--rose-200);
+    box-shadow: 0 12px 40px rgba(224,16,85,.1);
+    position: relative; overflow: hidden;
+  }
+  .guarantee-box::after {
+    content: ''; position: absolute; top: -40px; right: -40px;
+    width: 120px; height: 120px; background: radial-gradient(circle, var(--rose-100), transparent 70%);
+    border-radius: 50%;
+  }
+
+  /* ===== SCARCITY/COUNTDOWN ===== */
+  .scarcity-sec {
+    background: linear-gradient(135deg, var(--rose-500) 0%, var(--rose-700) 100%);
+    padding: 60px 20px 50px; text-align: center; position: relative; overflow: hidden;
+  }
+  .scarcity-sec::before {
+    content: ''; position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 2 L22 18 L38 20 L22 22 L20 38 L18 22 L2 20 L18 18 Z' fill='rgba(255,255,255,0.03)'/%3E%3C/svg%3E") repeat;
+    animation: float 10s ease infinite;
+  }
+  .scarcity-sec .sec-title { color: white; }
+  .scarcity-sec .sec-body { color: rgba(255,255,255,.8); }
+  .countdown-row { display: flex; gap: 12px; justify-content: center; margin: 24px 0; }
+  .cd-box {
+    background: rgba(255,255,255,.15); backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,.3); border-radius: 16px;
+    padding: 14px 16px; min-width: 72px;
+    animation: countdown-pop 1s ease infinite;
+  }
+  .cd-num { font-size: 2rem; font-weight: 900; color: white; font-family: 'Playfair Display', serif; line-height: 1; }
+  .cd-label { font-size: .65rem; color: rgba(255,255,255,.7); font-weight: 600; letter-spacing: .08em; text-transform: uppercase; margin-top: 4px; }
+  .scarcity-sec .btn-main {
+    background: white; color: var(--rose-600) !important;
+    box-shadow: 0 8px 28px rgba(0,0,0,.2);
+  }
+
+  /* ===== PRICING ===== */
+  .pricing-sec {
+    background: linear-gradient(180deg, #fff0f5 0%, #fde8ef 100%);
+    padding: 60px 20px 50px; text-align: center;
+  }
+  .price-card {
+    background: white; border-radius: 28px; padding: 30px 24px;
+    border: 2.5px solid var(--rose-300); position: relative;
+    box-shadow: 0 16px 50px rgba(224,16,85,.15);
+    max-width: 360px; margin: 24px auto 0;
+  }
+  .price-popular {
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: linear-gradient(135deg,var(--rose-500),var(--rose-600)); color: white;
+    font-size: .72rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+    padding: 5px 18px; border-radius: 99px;
+  }
+  .price-name { font-size: 1.1rem; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
+  .price-main { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 900; color: var(--rose-600); line-height: 1; }
+  .price-sub { font-size: .8rem; color: var(--text-light); margin-bottom: 20px; }
+  .price-features { list-style: none; margin-bottom: 24px; }
+  .price-features li {
+    display: flex; align-items: center; gap: 10px; padding: 8px 0;
+    border-bottom: 1px solid var(--rose-100); font-size: .88rem; color: var(--text-mid); text-align: left;
+  }
+  .price-features li:last-child { border-bottom: none; }
+  .price-features .check { color: var(--rose-500); flex-shrink: 0; }
+
+  /* ===== TEAM ===== */
+  .team-sec {
+    background: linear-gradient(160deg, #fde8ef 0%, #fff0f5 100%);
+    padding: 60px 20px 50px; text-align: center;
+  }
+  .dealer-card {
+    background: white; border-radius: 28px; padding: 28px 22px;
+    box-shadow: 0 12px 40px rgba(224,16,85,.1); margin-top: 24px; position: relative;
+    border: 2px solid var(--rose-100);
+  }
+  .dealer-photo {
+    width: 90px; height: 90px; border-radius: 20px;
+    border: 3px solid var(--rose-300); overflow: hidden; margin: 0 auto 14px;
+    box-shadow: 0 8px 20px rgba(224,16,85,.2);
+  }
+  .dealer-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .dealer-badges { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin: 10px 0 16px; }
+  .dealer-badge {
+    font-size: .72rem; font-weight: 700; padding: 4px 12px; border-radius: 99px;
+  }
+  .badge-green { background: #d4edda; color: #155724; }
+  .badge-blue { background: #cce5ff; color: #004085; }
+  .badge-gold { background: #fff3cd; color: #856404; }
+  .dealer-id {
+    font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--rose-600);
+    margin-bottom: 4px;
+  }
+  .dealer-cert-row { display: flex; gap: 10px; justify-content: center; margin-top: 16px; flex-wrap: wrap; }
+
+  /* ===== SOCIAL PROOF ===== */
+  .proof-sec {
+    background: linear-gradient(135deg, #fcc9da 0%, #fde8ef 60%, #fff0f5 100%);
+    padding: 50px 20px; text-align: center;
+  }
+  .proof-numbers { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+  .proof-num-card {
+    background: white; border-radius: 18px; padding: 20px 18px;
+    box-shadow: 0 4px 18px rgba(224,16,85,.08);
+  }
+  .proof-big { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; color: var(--rose-600); }
+  .proof-label { font-size: .85rem; color: var(--text-mid); font-weight: 500; }
+
+  /* ===== FLOATING CTA ===== */
+  .floating-wrap {
+    position: fixed; bottom: 24px; right: 20px; z-index: 9999;
+    display: flex; flex-direction: column; align-items: flex-end; gap: 10px;
+  }
+  .floating-label {
+    background: white; color: var(--rose-600); font-size: .75rem; font-weight: 700;
+    padding: 6px 12px; border-radius: 99px;
+    box-shadow: 0 4px 14px rgba(224,16,85,.2);
+    animation: fadeIn .5s ease both;
+    white-space: nowrap;
+  }
+  .floating-btn {
+    width: 60px; height: 60px; border-radius: 50%; border: none; cursor: pointer;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 28px rgba(37,211,102,.4);
+    animation: pulse-ring 2s ease infinite, float 3s ease infinite;
+    transition: transform .2s ease;
+  }
+  .floating-btn:hover { transform: scale(1.1); }
+  .floating-btn svg { width: 30px; height: 30px; fill: white; }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: linear-gradient(135deg, #fde8ef 0%, #fcc9da 100%);
+    padding: 30px 20px; text-align: center;
+    font-size: .78rem; color: var(--text-light);
+    border-top: 1px solid var(--rose-200);
+  }
+  footer strong { color: var(--rose-600); }
+</style>
+<!-- Google Tag Manager -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GTM-XXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date()); gtag('config', 'GTM-XXXXXXX');
+  function trackCTA(label) {
+    gtag('event', 'cta_click', { event_category: 'conversion', event_label: label });
+  }
+</script>
+</head>
+<body>
+
+<!-- Floating petals -->
+<div id="petals-container" style="position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden;"></div>
+
+<!-- ===== HERO ===== -->
+<section class="hero section">
+  <div class="petals-bg"></div>
+
+  <!-- Background orbs -->
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-orb hero-orb-3"></div>
+
+  <!-- Decorative SVG flowers top-left -->
+  <svg class="hero-flower" style="top:-10px;left:-10px;width:110px;opacity:.65;" viewBox="0 0 120 120" fill="none">
+    <circle cx="60" cy="60" r="14" fill="#f9c6d8"/>
+    <ellipse cx="60" cy="30" rx="10" ry="18" fill="#ffb3cc" opacity=".8"/>
+    <ellipse cx="60" cy="90" rx="10" ry="18" fill="#ffb3cc" opacity=".8"/>
+    <ellipse cx="30" cy="60" rx="18" ry="10" fill="#ffb3cc" opacity=".8"/>
+    <ellipse cx="90" cy="60" rx="18" ry="10" fill="#ffb3cc" opacity=".8"/>
+    <ellipse cx="39" cy="39" rx="10" ry="18" fill="#ffc2d4" opacity=".7" transform="rotate(45 39 39)"/>
+    <ellipse cx="81" cy="39" rx="10" ry="18" fill="#ffc2d4" opacity=".7" transform="rotate(-45 81 39)"/>
+    <ellipse cx="39" cy="81" rx="10" ry="18" fill="#ffc2d4" opacity=".7" transform="rotate(-45 39 81)"/>
+    <ellipse cx="81" cy="81" rx="10" ry="18" fill="#ffc2d4" opacity=".7" transform="rotate(45 81 81)"/>
+  </svg>
+  <!-- Decorative SVG flowers bottom-right -->
+  <svg class="hero-flower" style="bottom:80px;right:-14px;width:90px;opacity:.55;transform:rotate(30deg);" viewBox="0 0 120 120" fill="none">
+    <circle cx="60" cy="60" r="14" fill="#f9c6d8"/>
+    <ellipse cx="60" cy="30" rx="10" ry="18" fill="#ff94b3" opacity=".75"/>
+    <ellipse cx="60" cy="90" rx="10" ry="18" fill="#ff94b3" opacity=".75"/>
+    <ellipse cx="30" cy="60" rx="18" ry="10" fill="#ff94b3" opacity=".75"/>
+    <ellipse cx="90" cy="60" rx="18" ry="10" fill="#ff94b3" opacity=".75"/>
+  </svg>
+  <!-- Small flower mid-left -->
+  <svg class="hero-flower" style="top:42%;left:0px;width:56px;opacity:.5;" viewBox="0 0 120 120" fill="none">
+    <circle cx="60" cy="60" r="12" fill="#fde8ef"/>
+    <ellipse cx="60" cy="34" rx="9" ry="16" fill="#ffb3cc" opacity=".9"/>
+    <ellipse cx="60" cy="86" rx="9" ry="16" fill="#ffb3cc" opacity=".9"/>
+    <ellipse cx="34" cy="60" rx="16" ry="9" fill="#ffb3cc" opacity=".9"/>
+    <ellipse cx="86" cy="60" rx="16" ry="9" fill="#ffb3cc" opacity=".9"/>
+  </svg>
+
+  <div style="position:relative;z-index:5;width:100%;max-width:440px;margin:0 auto;display:flex;flex-direction:column;align-items:center;">
+
+    <!-- Logo + badge -->
+    <div class="hero-logo anim-fade-up">DVN</div>
+    <div class="hero-badge anim-fade-up delay-1">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+      Distributor Resmi ID: i1684
+    </div>
+
+    <!-- === VISUAL CLUSTER === -->
+    <div class="hero-visual anim-fade-up delay-2">
+
+      <!-- Glow ring behind cluster -->
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:240px;height:240px;border-radius:50%;background:radial-gradient(circle,rgba(255,180,210,.45) 0%,transparent 70%);pointer-events:none;"></div>
+
+      <!-- Polaroid model 1 (Asian woman) -->
+      <div class="polaroid polaroid-a">
+        <img src="https://placehold.co/136x160/fde8ef/c0547a?text=Model+1" alt="Model DVN">
+        <div class="polaroid-name">Sebelum & Sesudah ✦</div>
+      </div>
+
+      <!-- Polaroid model 2 (Western woman) -->
+      <div class="polaroid polaroid-b">
+        <img src="https://placehold.co/124x150/f9c6d8/a0336e?text=Model+2" alt="Sophia DVN">
+        <div class="polaroid-name">Sophia — DVN User</div>
+      </div>
+
+      <!-- Product floating circle -->
+      <div class="hero-product">
+        <div class="hero-product-inner">💊</div>
+      </div>
+
+      <!-- Superbrands spinning badge -->
+      <div class="hero-cert">⭐<br>SUPER<br>BRANDS<br>2024</div>
+
+      <!-- Sparkles -->
+      <span class="sparkle-el" style="top:4px;left:50%;animation-delay:.3s;">✦</span>
+      <span class="sparkle-el" style="bottom:50px;right:22px;animation-delay:.9s;font-size:.85rem;">✧</span>
+      <span class="sparkle-el" style="top:60px;left:10px;animation-delay:1.5s;font-size:.8rem;">✦</span>
+      <span class="sparkle-el" style="bottom:20px;left:30%;animation-delay:.6s;font-size:1.3rem;color:#ffc2d4;">✦</span>
+
+      <!-- Floating info chips -->
+      <div class="hero-info-chip hero-chip-1">
+        <span class="chip-dot" style="background:#e01055;"></span>
+        Collagen + Vit C
+      </div>
+      <div class="hero-info-chip hero-chip-2">
+        <span class="chip-dot" style="background:#28a745;"></span>
+        BPOM RI &amp; Halal MUI
+      </div>
+    </div>
+    <!-- END VISUAL CLUSTER -->
+
+    <!-- Headline -->
+    <h1 class="hero-headline anim-fade-up delay-3">Kulit Tampak <span>Lebih Muda</span> Dimulai dari Dalam</h1>
+    <p class="hero-sub anim-fade-up delay-4">Ribuan wanita Indonesia sudah merasakan perubahan nyata. Sekarang giliran Anda.</p>
+
+    <!-- Trust pills row -->
+    <div class="hero-trust-row anim-fade-up delay-4">
+      <div class="hero-trust-chip">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e01055" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        BPOM RI
+      </div>
+      <div class="hero-trust-chip">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e01055" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Halal MUI
+      </div>
+      <div class="hero-trust-chip">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e01055" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        GMP Certified
+      </div>
+      <div class="hero-trust-chip">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e01055" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        50.000+ Pengguna
+      </div>
+    </div>
+
+    <a href="https://wa.me/628XXXXXXXXXX?text=Halo,%20saya%20ingin%20order%20DVN%20Collagen" onclick="trackCTA('hero_cta')" class="btn-main anim-fade-up delay-5" style="max-width:360px;">
+      ✦ Beli Sekarang – Chat via WhatsApp
+    </a>
+    <p class="btn-micro anim-fade-up delay-5">Produk Original • Tersegel • Pengiriman ke Seluruh Indonesia</p>
+
+  </div>
+</section>
+
+<!-- ===== PROBLEM ===== -->
+<section class="problem-sec section reveal">
+  <div style="max-width:440px;margin:0 auto;">
+    <span class="sec-tag">Masalah yang Anda Rasakan</span>
+    <h2 class="sec-title">Pernah Merasa <span>Tua Sebelum Waktunya?</span></h2>
+    <p class="sec-body">Bercermin dan melihat kulit yang tidak lagi sesegar dulu — itu menyakitkan. Tapi Anda tidak sendirian.</p>
+    <div class="problem-grid">
+      <div class="problem-card reveal">
+        <div class="problem-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e01055" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div>
+          <h4>Kerutan & Garis Halus</h4>
+          <p>Muncul lebih awal dari yang seharusnya, membuat wajah terlihat lelah setiap hari.</p>
+        </div>
+      </div>
+      <div class="problem-card reveal">
+        <div class="problem-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e01055" stroke-width="2"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div>
+          <h4>Flek Hitam Membandel</h4>
+          <p>Bekas jerawat dan paparan sinar matahari meninggalkan noda yang susah hilang.</p>
+        </div>
+      </div>
+      <div class="problem-card reveal">
+        <div class="problem-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e01055" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div>
+          <h4>Kulit Kendur & Kusam</h4>
+          <p>Elastisitas kulit menurun seiring usia, membuat wajah tampak tidak segar.</p>
+        </div>
+      </div>
+      <div class="problem-card reveal">
+        <div class="problem-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e01055" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        </div>
+        <div>
+          <h4>Penuaan Dini di Wajah</h4>
+          <p>Polusi, stres, dan gaya hidup modern mempercepat proses penuaan kulit Anda.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AGITATE ===== -->
+<section class="agitate-sec section reveal">
+  <div style="max-width:440px;margin:0 auto;">
+    <span class="sec-tag">Tahukah Anda?</span>
+    <h2 class="sec-title">Setiap Hari Kulit Anda <span>Mengirim Sinyal Bahaya</span></h2>
+    <div class="agitate-quote reveal">
+      Paparan sinar UV, polusi udara, dan tekanan gaya hidup adalah musuh utama kesehatan kulit. Tanpa perlindungan dari dalam, kerusakan terus berlanjut diam-diam.
+    </div>
+    <p class="sec-body">Produk luar saja tidak cukup. Kulit butuh nutrisi dari dalam agar regenerasi sel berjalan optimal. Itulah mengapa solusi topikal sering terasa sia-sia.</p>
+  </div>
+</section>
+
+<!-- ===== SOLUTION ===== -->
+<section class="solution-sec section reveal">
+  <div style="max-width:440px;margin:0 auto;">
+    <span class="sec-tag">Solusi Terbukti</span>
+    <h2 class="sec-title">Rawat Kulit Anda <span>dari Dalam ke Luar</span></h2>
+    <p class="sec-body">DVN dengan Collagen hadir sebagai suplemen pendamping perawatan kulit harian Anda — formulasi internasional yang telah meraih penghargaan Superbrands Worldwide 2024.</p>
+    <div class="benefit-list">
+      <div class="benefit-item reveal">
+        <div class="benefit-num">1</div>
+        <div>
+          <h4>Membantu Menjaga Kesehatan Kulit dari Dalam</h4>
+          <p>Kolagen terhidrolisat mendukung nutrisi kulit secara menyeluruh sebagai bagian dari rutinitas harian.</p>
+        </div>
+      </div>
+      <div class="benefit-item reveal">
+        <div class="benefit-num">2</div>
+        <div>
+          <h4>Mendukung Penampilan Tetap Segar Sepanjang Hari</h4>
+          <p>Kombinasi Natrium Hyaluronat & Vitamin C membantu menjaga kulit terasa lembap dan bercahaya.</p>
+        </div>
+      </div>
+      <div class="benefit-item reveal">
+        <div class="benefit-num">3</div>
+        <div>
+          <h4>Melengkapi Gaya Hidup Sehat Modern</h4>
+          <p>Tablet kunyah yang praktis, mudah dikonsumsi kapan saja — cocok untuk ibu aktif dan profesional sibuk.</p>
+        </div>
+      </div>
+      <div class="benefit-item reveal">
+        <div class="benefit-num">4</div>
+        <div>
+          <h4>Formulasi Bahan Berkualitas Internasional</h4>
+          <p>Resveratrol dari Jepang, Delima dari Korea, dan Natrium Hyaluronat dari Prancis — dipadukan dalam satu tablet.</p>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:28px;">
+      <a href="https://wa.me/628XXXXXXXXXX?text=Saya%20ingin%20tahu%20lebih%20lanjut%20tentang%20DVN%20Collagen" onclick="trackCTA('solution_cta')" class="btn-main">
+        ✦ Dapatkan DVN Collagen Sekarang
+      </a>
+      <p class="btn-micro">BPOM RI • Halal MUI • Produksi Standar Internasional</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INGREDIENTS ===== -->
+<section class="ingr-sec section reveal">
+  <div style="max-width:440px;margin:0 auto;">
+    <span class="sec-tag">Formulasi Premium</span>
+    <h2 class="sec-title">Dipadukan dengan Bahan <span>Internasional Pilihan</span></h2>
+    <p class="sec-body">Setiap komponen dalam DVN dipilih secara selektif untuk melengkapi gaya hidup sehat modern Anda.</p>
+    <div class="cert-row">
+      <div class="cert-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e01055" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="20 6 9 17 4 12"/></svg>
+        GMP Certified
+      </div>
+      <div class="cert-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e01055" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        BPOM RI
+      </div>
+      <div class="cert-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#e01055" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/></svg>
+        Halal MUI
+      </div>
+    </div>
+    <div class="ingr-grid">
+      <div class="ingr-card reveal">
+        <h4>🍇 Resveratrol (Jepang)</h4>
+        <p>Senyawa alami dari anggur & beri yang dipilih sebagai bahan nutrisi tambahan dalam formulasi DVN.</p>
+      </div>
+      <div class="ingr-card reveal">
+        <h4>🍎 Delima (Korea)</h4>
+        <p>Buah kaya nutrisi yang digunakan sebagai bahan pendukung kesehatan kulit dalam DVN Collagen.</p>
+      </div>
+      <div class="ingr-card reveal">
+        <h4>💧 Natrium Hyaluronat (Prancis)</h4>
+        <p>Komponen penting yang membantu menjaga kelembapan kulit sebagai bagian dari rutinitas harian.</p>
+      </div>
+      <div class="ingr-card reveal">
+        <h4>✨ Kolagen Terhidrolisat</h4>
+        <p>Protein penting sebagai nutrisi tambahan untuk mendukung kesehatan kulit dari dalam.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TIMELINE ===== -->
+<section class="timeline-sec section reveal">
+  <div style="max-width:440px;margin:0 auto;">
+    <span class="sec-tag">Perjalanan Kulit Anda</span>
+    <h2 class="sec-title">Apa yang Terjadi Setelah <span>Konsumsi Rutin?</span></h2>
+    <p class="sec-body">Hasil terbaik didapat dengan konsumsi sesuai anjuran dan konsisten setiap hari.</p>
+    <div class="timeline" style="padding-left:10px;">
+      <div class="tl-item reveal">
+        <div class="tl-dot">W1</div>
+        <div class="tl-content">
+          <h4>Minggu 1 – Mulai Meresap</h4>
+          <p>Nutrisi mulai diserap tubuh. Kulit terasa lebih nyaman dan lembap sepanjang hari.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot">W2</div>
+        <div class="tl-content">
+          <h4>Minggu 2–3 – Awal Perubahan</h4>
+          <p>Rutinitas terbentuk. Penampilan kulit mulai tampak lebih segar dan bercahaya.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot">M1</div>
+        <div class="tl-content">
+          <h4>Bulan 1 – Perubahan Terasa</h4>
+          <p>Kulit tampak lebih sehat. Elastisitas membaik, wajah terlihat lebih segar dari sebelumnya.</p>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot">M3</div>
+        <div class="tl-content">
+          <h4>Bulan 3+ – Manfaat Optimal</h4>
+          <p>Dengan konsumsi rutin, manfaat nutrisi dari dalam terasakan lebih optimal dan konsisten.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SOCIAL PROOF ===== -->
+<section class="proof-sec section reveal">
+  <div style="max-width:440px;margin:0 auto;">
+    <span class="sec-tag">Dipercaya Ribuan Orang</span>
+    <h2 class="sec-title">Bergabung Bersama <span>Komunitas DVN</span></h2>
+    <div class="proof-numbers">
+      <div class="proof-num-card reveal">
+        <div class="proof-big">50.000+</div>
+        <div class="proof-label">Pengguna Aktif di Indonesia</div>
+      </div>
+      <div class="proof-num-card reveal">
+        <div class="proof-big">⭐ 4.8/5</div>
+        <div class="proof-label">Rating dari Ribuan Ulasan Pelanggan</div>
+      </div>
+      <div class="proof-num-card reveal">
+        <div class="proof-big">Superbrands</div>
+        <div class="proof-label">Penghargaan Superbrands Worldwide 2024</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testi-sec section reveal">
+  <div style="max-width:440px;margin:0 auto;">
+    <span class="sec-tag">Cerita Nyata</span>
+    <h2 class="sec-title">Mereka Sudah <span>Merasakannya</span></h2>
+    <div class="testi-scroll">
+      <div class="testi-card reveal">
+        <div class="testi-quote">"Setelah rutin konsumsi selama sebulan, kulit saya terasa lebih lembap dan tampak lebih cerah. Suami saya sampai notice! Senang banget menemukan suplemen yang cocok."</div>
+        <div class="testi-author">
+          <div class="testi-avatar">S</div>
+          <div><div class="testi-name">Sari Dewi, 34 th</div><div class="testi-role">Ibu Rumah Tangga, Jakarta</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-quote">"Awalnya ragu-ragu karena harga. Tapi ternyata worth it banget! Kulit saya jadi lebih kenyal dan garis halus di sekitar mata tampak berkurang. Puas!"</div>
+        <div class="testi-author">
+          <div class="testi-avatar">R</div>
+          <div><div class="testi-name">Rina Pratiwi, 42 th</div><div class="testi-role">Wiraswasta, Surabaya</div></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="testi-quote">"Istri saya yang rekomendasikan DVN Collagen. Sekarang kami berdua konsumsi bareng setiap hari. Kulit istri saya kelihatan lebih glowing, bikin bangga!"</div>
+        <div class="testi-author">
+          <div class="testi-avatar">B</div>
+          <div><div class="testi-name">Budi Santoso, 38 th</div><div class="testi-role">Karyawan Swasta, Bandung</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPARISON ===== -->
+<section class="compare-sec section reveal">
+  <div style="max-width:440px;margin:0 auto;">
+    <span class="sec-tag">Perbandingan</span>
+    <h2 class="sec-title">DVN vs Produk <span>Lainnya</span></h2>
+    <table class="compare-table reveal">
+      <thead>
+        <tr>
+          <th>Fitur</th>
+          <th>Skincare Biasa</th>
+          <th>DVN Collagen</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Bekerja dari Dalam</td><td>✗</td><td>✓</td></tr>
+        <tr><td>Bersertifikat BPOM</td><td>Sebagian</td><td>✓</td></tr>
+        <tr><td>Halal MUI</td><td>Sebagian</td><td>✓</td></tr>
+        <tr><td>Formulasi Internasional</td><td>✗</td><td>✓</td></tr>
+        <tr><td>Mudah Dikonsumsi</td><td>Perlu ritual panjang</td><td>✓ Tablet kunyah</td></tr>
+        <tr><td>Penghargaan Global</td><td>✗</td><td>✓ Superbrands 2024</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===== OBJECTION / PRICING ===== -->
+<section class="pricing-sec section reveal">
+  <div style="max-width:440px;margin:0 auto;">
+    <span class="sec-tag">Investasi Kecantikan Anda</span>
+    <h2 class="sec-title">Lebih Hemat dari <span>Perawatan Salon</span></h2>
+    <p class="sec-body">Perawatan salon bisa menghabiskan ratusan ribu setiap kunjungan. DVN Collagen memberikan nutrisi dari dalam setiap hari — lebih efisien, lebih konsisten.</p>
+    <div class="price-card reveal">
+      <div class="price-popular">✦ TERPOPULER</div>
+      <div class="price-name">DVN Collagen – Paket Resmi</div>
+      <div class="price-main">Chat WA</div>
+      <div class="price-sub">Hubungi kami untuk harga terbaik hari ini</div>
+      <ul class="price-features">
+        <li><span class="check">✓</span> Produk Original & Tersegel</li>
+        <li><span class="check">✓</span> Bersertifikat BPOM RI</li>
+        <li><span class="check">✓</span> Halal MUI Terjamin</li>
+        <li><span class="check">✓</span> Dari Dealer Resmi ID: i1684</li>
+        <li><span class="check">✓</span> Konsultasi Gratis via WhatsApp</li>
+        <li><span class="check">✓</span> Pengiriman ke Seluruh Indonesia</li>
+      </ul>
+      <a href="https://wa.me/628XXXXXXXXXX?text=Halo,%20saya%20ingin%20tanya%20harga%20DVN%20Collagen" onclick="trackCTA('pricing_cta')" class="btn-main">
+        ✦ Hubungi Dealer Resmi
+      </a>
+      <p class="btn-micro">Ratusan pelanggan puas setiap bulannya</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GUARANTEE ===== -->
+<section class="guarantee-sec section reveal">
+  <div style="max-width:440px;margin:0 auto;">
+    <span class="sec-tag">Ketenangan Pikiran Anda</span>
+    <h2 class="sec-title">Beli dengan <span>Rasa Aman</span></h2>
+    <div class="guarantee-box reveal">
+      <div style="font-size:3rem;margin-bottom:12px;">🛡️</div>
+      <h3 style="font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--rose-700);margin-bottom:12px;">Jaminan Produk Original</h3>
+      <p style="font-size:.88rem;color:var(--text-mid);line-height:1.7;margin-bottom:16px;">Setiap pembelian melalui dealer resmi ID <strong>i1684</strong> dijamin keaslian dan kualitasnya. Kemasan tersegel, produk teregistrasi BPOM, dan bersertifikat Halal MUI — ketenangan pikiran Anda adalah prioritas kami.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;">
+        <div class="cert-badge">✓ BPOM RI</div>
+        <div class="cert-badge">✓ Halal MUI</div>
+        <div class="cert-badge">✓ GMP Certified</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCARCITY / COUNTDOWN ===== -->
+<section class="scarcity-sec section reveal">
+  <div style="position:relative;z-index:2;max-width:440px;margin:0 auto;">
+    <span class="sec-tag" style="background:rgba(255,255,255,.2);color:white;">⏰ Penawaran Terbatas</span>
+    <h2 class="sec-title" style="color:white;">Stok Terbatas untuk <span style="color:#ffc2d4;">Periode Ini</span></h2>
+    <p class="sec-body" style="color:rgba(255,255,255,.85);">Harga spesial berakhir dalam:</p>
+    <div class="countdown-row">
+      <div class="cd-box"><div class="cd-num" id="cd-h">00</div><div class="cd-label">Jam</div></div>
+      <div class="cd-box"><div class="cd-num" id="cd-m">00</div><div class="cd-label">Menit</div></div>
+      <div class="cd-box"><div class="cd-num" id="cd-s">00</div><div class="cd-label">Detik</div></div>
+    </div>
+    <p style="color:rgba(255,255,255,.8);font-size:.82rem;margin-bottom:20px;">Jangan sampai kehabisan — stok terbatas tiap periode.</p>
+    <a href="https://wa.me/628XXXXXXXXXX?text=Saya%20ingin%20order%20DVN%20Collagen%20sebelum%20kehabisan" onclick="trackCTA('scarcity_cta')" class="btn-main">
+      ✦ Amankan Stok Saya Sekarang
+    </a>
+    <p class="btn-micro" style="color:rgba(255,255,255,.7);">Respon cepat dalam hitungan menit</p>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq-sec section reveal">
+  <div style="max-width:440px;margin:0 auto;">
+    <span class="sec-tag">Pertanyaan Umum</span>
+    <h2 class="sec-title">Ada yang <span>Ingin Ditanyakan?</span></h2>
+    <div style="margin-top:20px;">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Apakah DVN Collagen aman dikonsumsi setiap hari?
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">DVN Collagen adalah suplemen yang telah terdaftar di BPOM RI dan bersertifikat Halal MUI. Konsumsi sesuai anjuran yang tertera pada kemasan atau sesuai saran dari tenaga kesehatan.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Harganya mahal, apakah sebanding?
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">DVN Collagen menggunakan bahan formulasi internasional (Jepang, Korea, Prancis) dan telah meraih penghargaan Superbrands Worldwide 2024. Bandingkan dengan biaya perawatan salon yang jauh lebih tinggi — DVN memberikan nutrisi dari dalam setiap hari secara konsisten. Hubungi kami untuk info harga terbaik.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Kapan bisa mulai merasakan manfaatnya?
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Hasil tiap individu berbeda-beda tergantung kondisi kulit dan konsistensi konsumsi. Sebagian pengguna melaporkan perubahan positif setelah konsumsi rutin selama beberapa minggu. Kunci utamanya adalah konsisten sesuai anjuran.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Bagaimana cara memastikan produk yang saya beli asli?
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Belilah hanya melalui dealer resmi yang terverifikasi. Kami adalah Dealer Resmi DVN dengan ID Dealer: i1684 yang telah terverifikasi dan resmi. Setiap produk yang kami jual tersegel dan asli.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Apakah cocok untuk pria juga?
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Ya, DVN Collagen bisa dikonsumsi oleh pria maupun wanita yang ingin menjaga kesehatan kulit dari dalam. Banyak suami yang mulai ikut konsumsi setelah melihat perubahan positif pada istrinya.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEAM / DEALER ===== -->
+<section class="team-sec section reveal">
+  <div style="max-width:440px;margin:0 auto;">
+    <span class="sec-tag">Dealer Resmi Anda</span>
+    <h2 class="sec-title">Dapatkan DVN dari <span>Sumber Terpercaya</span></h2>
+    <div class="dealer-card reveal">
+      <div class="dealer-photo">
+        <img src="https://placehold.co/90x90/fde8ef/e01055?text=RAYA" alt="Dealer Resmi">
+      </div>
+      <div class="dealer-id">ID Dealer: i1684</div>
+      <p style="font-size:.85rem;color:var(--text-mid);margin-bottom:8px;">DVN X RAYA — Dealer Resmi DVN Collagen</p>
+      <div class="dealer-badges">
+        <span class="dealer-badge badge-green">● Online</span>
+        <span class="dealer-badge badge-blue">✓ Terverifikasi</span>
+        <span class="dealer-badge badge-gold">★ Resmi</span>
+      </div>
+      <p style="font-size:.85rem;color:var(--text-mid);line-height:1.6;margin-bottom:16px;">Dapatkan DVN original & resmi dengan kualitas terjaga dan kemasan tersegel aman. Dengan konsumsi rutin sesuai anjuran, DVN membantu menjaga elastisitas dan tampilan kulit tetap sehat.</p>
+      <div class="dealer-cert-row">
+        <div class="cert-badge"><span>GMP</span></div>
+        <div class="cert-badge"><span>BPOM</span></div>
+        <div class="cert-badge"><span>Halal</span></div>
+      </div>
+      <div style="margin-top:20px;">
+        <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20Raya,%20saya%20ingin%20order%20DVN%20Collagen%20ID%20i1684" onclick="trackCTA('dealer_cta')" class="btn-main">
+          ✦ Chat dengan Dealer Resmi
+        </a>
+        <p class="btn-micro">Respons dalam hitungan menit • Mon-Sun 08.00-22.00</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section style="background:linear-gradient(135deg,#fde8ef 0%,#fcc9da 50%,#fde8ef 100%);padding:60px 20px;text-align:center;" class="section reveal">
+  <div style="max-width:440px;margin:0 auto;">
+    <div style="font-size:2.8rem;margin-bottom:8px;">🌸</div>
+    <h2 class="sec-title">Mulai Perjalanan <span>Kulit Cantikmu Hari Ini</span></h2>
+    <p class="sec-body" style="max-width:300px;margin:0 auto 24px;">Ribuan wanita Indonesia sudah memulai. Jangan tunda lagi — setiap hari tanpa nutrisi adalah hari yang terlewat.</p>
+    <a href="https://wa.me/628XXXXXXXXXX?text=Halo,%20saya%20mau%20order%20DVN%20Collagen%20dari%20Dealer%20i1684" onclick="trackCTA('final_cta')" class="btn-main" style="max-width:360px;">
+      ✦ Beli Sekarang via WhatsApp
+    </a>
+    <p class="btn-micro">Original • BPOM RI • Halal MUI • Dealer Resmi ID: i1684</p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <strong>DVN Dengan Collagen</strong><br>
+  Dealer Resmi: DVN X RAYA | ID: i1684<br>
+  Terdaftar BPOM RI • Halal MUI • GMP Certified • Superbrands Worldwide 2024<br><br>
+  &copy; 2025 DVN Collagen. Semua hak dilindungi.
+</footer>
+
+<!-- ===== FLOATING WA BUTTON ===== -->
+<div class="floating-wrap">
+  <div class="floating-label">💬 Chat Dealer Resmi</div>
+  <a href="https://wa.me/628XXXXXXXXXX?text=Halo,%20saya%20ingin%20tanya%20tentang%20DVN%20Collagen" onclick="trackCTA('floating_wa')" class="floating-btn" aria-label="Chat WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12.004 0C5.374 0 0 5.373 0 12c0 2.117.554 4.104 1.523 5.827L.057 23.97l6.304-1.454A11.95 11.95 0 0012.004 24C18.63 24 24 18.626 24 12c0-6.627-5.37-12-11.996-12zm0 21.818a9.822 9.822 0 01-5.012-1.378l-.36-.213-3.733.861.893-3.621-.234-.373A9.77 9.77 0 012.182 12c0-5.421 4.4-9.818 9.822-9.818 5.42 0 9.819 4.397 9.819 9.818 0 5.421-4.4 9.818-9.819 9.818z"/>
+    </svg>
+  </a>
+</div>
+
+<script>
+// ===== FALLING PETALS =====
+(function() {
+  var c = document.getElementById('petals-container');
+  for (var i = 0; i < 14; i++) {
+    (function(idx) {
+      setTimeout(function() {
+        var p = document.createElement('div');
+        p.className = 'petal';
+        p.style.left = (Math.random() * 100) + 'vw';
+        p.style.animationDuration = (6 + Math.random() * 8) + 's';
+        p.style.animationDelay = (Math.random() * 8) + 's';
+        p.style.transform = 'rotate(' + (Math.random()*360) + 'deg)';
+        p.style.width = (12 + Math.random()*14) + 'px';
+        p.style.height = (16 + Math.random()*16) + 'px';
+        c.appendChild(p);
+      }, idx * 400);
+    })(i);
+  }
+})();
+
+// ===== SCROLL REVEAL =====
+(function() {
+  var els = document.querySelectorAll('.reveal');
+  var io = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  els.forEach(function(el) { io.observe(el); });
+})();
+
+// ===== COUNTDOWN =====
+(function() {
+  var end = new Date();
+  end.setHours(end.getHours() + 5, end.getMinutes() + 37, end.getSeconds() + 0);
+  var hEl = document.getElementById('cd-h');
+  var mEl = document.getElementById('cd-m');
+  var sEl = document.getElementById('cd-s');
+  function pad(n) { return n < 10 ? '0'+n : ''+n; }
+  function tick() {
+    var now = new Date();
+    var diff = Math.max(0, Math.floor((end - now) / 1000));
+    var h = Math.floor(diff / 3600);
+    var m = Math.floor((diff % 3600) / 60);
+    var s = diff % 60;
+    hEl.textContent = pad(h); mEl.textContent = pad(m); sEl.textContent = pad(s);
+    if (diff > 0) setTimeout(tick, 1000);
+    else { end = new Date(); end.setHours(end.getHours() + 5); }
+  }
+  tick();
+})();
+
+// ===== FAQ TOGGLE =====
+function toggleFaq(btn) {
+  var ans = btn.nextElementSibling;
+  var isOpen = ans.classList.contains('open');
+  document.querySelectorAll('.faq-a.open').forEach(function(a) {
+    a.classList.remove('open');
+    a.previousElementSibling.classList.remove('open');
+  });
+  if (!isOpen) { ans.classList.add('open'); btn.classList.add('open'); }
+}
+
+// ===== FLOATING LABEL HIDE AFTER 3s =====
+setTimeout(function() {
+  var lbl = document.querySelector('.floating-label');
+  if (lbl) { lbl.style.transition = 'opacity .5s'; lbl.style.opacity = '0'; }
+}, 3500);
+</script>
+</body>
+</html>
